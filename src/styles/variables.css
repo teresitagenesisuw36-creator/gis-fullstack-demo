@@ -1,0 +1,82 @@
+/* CSS 变量：浅色/深色主题 */
+:root {
+  /* 浅色主题（默认） */
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #ffffff;
+  --bg-sidebar: #e8ecf1;
+  --bg-map: #d4e6f1;
+  --text-primary: #2c3e50;
+  --text-secondary: #606266;
+  --border-color: #dcdfe6;
+  --accent-color: #409eff;
+  --accent-hover: #337ecc;
+  --status-bg: #e8ecf1;
+  --toolbar-bg: #ffffff;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  --hover-bg: rgba(64, 158, 255, 0.08);
+  --input-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-sidebar: #0f3460;
+  --bg-map: #1a3a4a;
+  --text-primary: #e0e6ed;
+  --text-secondary: #a0aab4;
+  --border-color: #2c3e6b;
+  --accent-color: #64b5f6;
+  --accent-hover: #42a5f5;
+  --status-bg: #0f3460;
+  --toolbar-bg: #16213e;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --hover-bg: rgba(100, 181, 246, 0.12);
+  --input-bg: #1a2744;
+}
+
+/* 全局基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s, color 0.3s;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* 工具类 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
